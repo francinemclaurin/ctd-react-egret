@@ -1,29 +1,20 @@
 import React from 'react';
 import TodoListItem from './TodoListItem';
-let todoListItems = [
-    {
-      id: 1,
-    title: "Read React"
-    },
-    {
-      id: 2,
-    title: "Practice React"
-    },
-    {
-      id: 3,
-    title: "Share the Good and the Bad"
-    }
-   ]
 
-function TodoList () {
+
+function TodoList (props) {
+  console.log(props);
     return (
+     
       <ul> 
+        
         {
-          todoListItems.map((todo) => {
+          props.todoList.map((todo) => {
             return <TodoListItem key={todo.id} item={todo} />
           })
         }  
       </ul>
+     
     )
 }
 
